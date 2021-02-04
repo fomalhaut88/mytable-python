@@ -75,7 +75,7 @@ class Varchar(BaseField):
         return block
 
     def from_bytes(self, block):
-        return block.decode()
+        return block.decode().split('\x00', 1)[0]
 
 
 class Bytes(BaseField):
